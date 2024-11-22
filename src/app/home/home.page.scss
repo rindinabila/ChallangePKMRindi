@@ -1,0 +1,102 @@
+/* Mengatur area input */
+.input-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+.input-area ion-input,
+.input-area ion-select {
+  width: 90%;
+  max-width: 500px;
+}
+
+.input-area ion-button {
+  align-self: flex-end;
+  margin-right: 10%;
+  max-width: 150px;
+}
+
+/* Mengatur area hasil */
+.result-area {
+  margin: 20px;
+  padding: 10px;
+}
+
+.result-area div {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.result-area h1 {
+  font-size: 20px;
+  margin: 0;
+  color: #333;
+}
+
+.result-area p {
+  font-size: 16px;
+  margin: 5px 0;
+  color: #555;
+}
+
+.result-area ion-button {
+  margin-right: 10px;
+}
+
+/* Tombol delete */
+.result-area ion-button[color="danger"] {
+  background-color: #e74c3c;
+  border-radius: 5px;
+}
+
+/* Area form edit */
+.edit-area {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  background-color: #f0f8ff;
+  padding: 20px;
+  margin: 20px;
+}
+
+.edit-area h2 {
+  text-align: center;
+  color: #007bff;
+}
+
+.edit-area ion-input,
+.edit-area ion-select {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.edit-area ion-button {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 600px) {
+  .input-area ion-button {
+    align-self: center;
+    width: 100%;
+  }
+
+  .result-area div {
+    padding: 10px;
+  }
+
+  .edit-area {
+    padding: 15px;
+  }
+}
+
+
+
+

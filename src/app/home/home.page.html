@@ -1,0 +1,46 @@
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Manajemen Data</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <!-- Form Input Data -->
+  <div class="input-area">
+    <ion-input fill="outline" label="Nama :" [(ngModel)]="dataWillSubmitted.name"></ion-input>
+    <ion-input fill="outline" label="NIM :" type="number" [(ngModel)]="dataWillSubmitted.nim"></ion-input>
+    <ion-select fill="outline" label="Kelas :" [(ngModel)]="dataWillSubmitted.class">
+      <ion-select-option *ngFor="let class of classData">{{ class }}</ion-select-option>
+    </ion-select>
+    <ion-button (click)="submitData()">Tambah</ion-button>
+  </div>
+
+  <!-- Tampilkan Data -->
+  <div class="result-area">
+    <div *ngFor="let person of personData; let i = index">
+      <h1>Person {{ i + 1 }}</h1>
+      <p>Nama: {{ person.name }}</p>
+      <p>NIM: {{ person.nim }}</p>
+      <p>Kelas: {{ person.class }}</p>
+
+      <!-- Button Edit -->
+      <ion-button (click)="openEditForm(person)">Edit</ion-button>
+
+      <!-- Button Delete -->
+      <ion-button color="danger" (click)="onDelete(person.id)">Delete</ion-button>
+    </div>
+  </div>
+
+  
+  <!-- Form Edit Data -->
+  <div *ngIf="isEditedMode" class="edit-area">
+    <h2>Edit Data</h2>
+    <ion-input fill="outline" label="Nama" [(ngModel)]="dataWillSubmitted.name"></ion-input>
+    <ion-input fill="outline" label="NIM" type="number" [(ngModel)]="dataWillSubmitted.nim"></ion-input>
+    <ion-select fill="outline" label="Kelas" [(ngModel)]="dataWillSubmitted.class">
+      <ion-select-option *ngFor="let class of classData">{{ class }}</ion-select-option>
+    </ion-select>
+    <ion-button (click)="editData()">Simpan Perubahan</ion-button>
+  </div>
+</ion-content>
